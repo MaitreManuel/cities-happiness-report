@@ -1,0 +1,43 @@
+// general
+@import 'tools/mixins';
+@import 'tools/variables';
+@import 'tools/animation';
+// Bootstraps
+// bootstrap requirements
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/reboot';
+// bootstrap utilities
+@import '~bootstrap/scss/utilities/spacing';
+// bootstrap components
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/nav';
+@import '~bootstrap/scss/navbar';
+
+html {
+    font-size: 10px;
+}
+body {
+    background-color: $white;
+    color: $black;
+    font-family: 'Arial', SansSerif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+}
+.justify-content-center {
+    justify-content: center!important;
+}
+.p-absolute {
+    position: absolute !important;
+}
+.p-fixed {
+    position: fixed !important;
+}
+.p-relative {
+    position: relative !important;
+}
