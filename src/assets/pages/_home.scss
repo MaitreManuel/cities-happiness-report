@@ -10,10 +10,69 @@
         -webkit-transform: translateY(-50%);
         -moz-transform: translateY(-50%);
         transform: translateY(-50%);
-        img {
+        .french-map {
+            height: 630px;
+            width: 640px;
+        }
+        .cities {
             height: 100%;
-            max-height: 800px;
+            left: 0;
+            position: absolute;
+            top: 0;
             width: 100%;
+            #brest-wrapper {
+                left: 30px;
+                top: 192px;
+            }
+            #bordeaux-wrapper {
+                left: 160px;
+                top: 460px;
+            }
+            #grenoble-wrapper {
+                left: 495px;
+                top: 400px;
+            }
+            #lille-wrapper {
+                left: 315px;
+                top: 20px;
+            }
+            #limoges-wrapper {
+                left: 215px;
+                top: 360px;
+            }
+            #lyon-wrapper {
+                left: 460px;
+                top: 300px;
+            }
+            #marseille-wrapper {
+                left: 470px;
+                top: 510px;
+            }
+            #montpellier-wrapper {
+                left: 320px;
+                top: 515px;
+            }
+            #nantes-wrapper {
+                left: 135px;
+                top: 265px;
+            }
+            #paris-wrapper {
+                left: 335px;
+                top: 150px;
+            }
+            #rennes-wrapper {
+                left: 160px;
+                top: 160px;
+            }
+            #strasbourg-wrapper {
+                left: 520px;
+                top: 145px;
+            }
+            .btn {
+                left: calc(50% - 45px);
+                position: relative;
+                top: calc(50% - 43px);
+            }
         }
     }
 }

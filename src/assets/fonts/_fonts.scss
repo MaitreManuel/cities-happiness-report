@@ -1,5 +1,11 @@
 @font-face {
-    font-family: 'Bryan';
+    font-family: 'Open-Sans';
+    src: url('fonts/OpenSans-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bryant';
     src: url('fonts/Bryant.otf');
     font-weight: normal;
     font-style: normal;
@@ -13,6 +19,18 @@
 @font-face {
     font-family: 'Bryan-Medium';
     src: url('fonts/Bryant-Medium.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Din-Round-Regular';
+    src: url('fonts/din-round-pro-regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Din-Round-bold';
+    src: url('fonts/din-round-pro-bold.otf');
     font-weight: normal;
     font-style: normal;
 }

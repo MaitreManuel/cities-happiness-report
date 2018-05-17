@@ -1,0 +1,17 @@
+a.btn {
+    border-radius: 20px;
+    font-family: $din_rnd_lgt;
+    font-size: 1.9rem;
+    max-height: 43px;
+    padding: .5rem 3rem;
+    &.btn-primary {
+        border: 1px solid $yellow;
+        background-color: $yellow;
+        color: $white;
+        &:active, &:hover {
+            background-color: $white;
+            color: $yellow;
+            text-decoration: none;
+        }
+    }
+}

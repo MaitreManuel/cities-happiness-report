@@ -11,7 +11,7 @@ class Nav extends Component {
       <header id="Nav">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <NavLink to="/" id="home" className="navbar-brand">
-            <img src="public/logo_data.png" width="206" height="32" className="d-inline-block align-top" alt="Image de marque happy.cities" />
+            <img src="public/logo_data.svg" width="206" height="32" className="d-inline-block align-top" alt="Image de marque happy.cities" />
           </NavLink>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>

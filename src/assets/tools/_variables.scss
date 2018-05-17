@@ -3,11 +3,15 @@ $grey_light:     #edf2f7;
 $grey_medium:    #7f868d;
 $grey_charcoal:  #323b45;
 $yellow:         #ffcb3a;
+$yellow_emoji:   #ffdd67;
 $white:          #ffffff;
 
-$bryan         : 'Bryan';
-$bryan_bld     : 'Bryan-Bold';
-$bryan_med     : 'Bryan-Medium';
+$roboto        : 'Open-Sans', sans-serif;
+$bryant        : 'Bryant', $roboto;
+$bryant_bld    : 'Bryant-Bold', $roboto;
+$bryant_med    : 'Bryant-Medium', $roboto;
 $din_rnd_blk   : 'Din-Round-Black';
+$din_rnd_bld   : 'Din-Round-Bold';
 $din_rnd_lgt   : 'Din-Round-Light';
 $din_rnd_med   : 'Din-Round-Medium';
+$din_rnd_reg   : 'Din-Round-Regular';

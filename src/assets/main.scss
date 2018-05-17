@@ -17,8 +17,10 @@
 @import '~bootstrap/scss/nav';
 @import '~bootstrap/scss/navbar';
 // custom styles
+@import 'components/button';
 @import 'components/container';
 @import 'components/criterias';
+@import 'components/city_emoji';
 @import 'components/nav';
 @import 'pages/home';
 
@@ -28,7 +30,7 @@ html {
 body {
     background-color: $white;
     color: $grey_charcoal;
-    font-family: $din_rnd_lgt;
+    font-family: $din_rnd_reg;
     font-size: 1.6rem;
     font-stretch: normal;
     font-style: normal;
