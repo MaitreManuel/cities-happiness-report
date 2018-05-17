@@ -2,5 +2,17 @@
     height: 76px;
     nav {
         height: 100%;
+        .navbar-nav {
+            .nav-link {
+                -webkit-transition: -webkit-transform .15s ease-in;
+                -moz-transition: -moz-transform .15s ease-in;
+                transition: transform .15s ease-in;
+                &:active, &:hover {
+                    -webkit-transform: scale(1.2);
+                    -moz-transform: scale(1.2);
+                    transform: scale(1.2);
+                }
+            }
+        }
     }
 }

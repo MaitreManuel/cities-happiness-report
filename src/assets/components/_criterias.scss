@@ -46,7 +46,7 @@
                     input[type="radio"]:checked ~ .custom-control-label {
                         color: $yellow;
                         &::after {
-                            width: 100%;
+                            width: calc(100% + 65px);
                         }
                     }
                     .custom-control-label {
@@ -55,6 +55,7 @@
                             display: block;
                             content:'';
                             height: 4px;
+                            margin-left: -65px;
                             margin-top: 8px;
                             width: 0;
                             -webkit-transition: width .2s ease-in;
