@@ -3,14 +3,32 @@
     height: 100vh;
     width: 100vw;
     .logo {
-        background: $yellow;
         height: 60px;
         left: 50%;
         position: absolute;
         top: calc(50% - 60px);
-        width: 46px;
+        width: 60px;
         -webkit-transform: translate(-50%);
         -moz-transform: translate(-50%);
         transform: translate(-50%);
+        img, svg {
+            height: 100%;
+            width: 100%;
+            &.blink {
+                #Path {
+                    -webkit-animation: blink .75s linear 1;
+                    -moz-animation: blink .75s linear 1;
+                    animation: blink .75s linear 1;
+                }
+            }
+            &.jumping {
+                -webkit-animation: jump .5s linear alternate 10;
+                -moz-animation: jump .5s linear alternate 10;
+                animation: jump .5s linear alternate 10;
+                -webkit-transform-origin: 50% 50%;
+                -moz-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+            }
+        }
     }
 }

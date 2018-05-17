@@ -2,6 +2,51 @@
     height: 76px;
     nav {
         height: 100%;
+        .navbar-brand {
+            margin-left: -2rem;
+            padding: 1rem;
+            position: relative;
+            &::before, &::after {
+                border: 0 solid transparent;
+                bottom: 0;
+                box-sizing: border-box;
+                content: '';
+                height: 0;
+                pointer-events: none;
+                position: absolute;
+                right: 0;
+                width: 0;
+            }
+            &::before {
+                border-bottom-width: 4px;
+                border-left-width: 4px;
+            }
+            &::after {
+                border-right-width: 4px;
+                border-top-width: 4px;
+            }
+            &:hover {
+                color: $yellow;
+                &::before, &::after {
+                    border-color: $yellow;
+                    height: 100%;
+                    width: 100%;
+                    -webkit-transition: border-color 0s, width .25s, height .25s;
+                    -moz-transition: border-color 0s, width .25s, height .25s;
+                    transition: border-color 0s, width .25s, height .25s;
+                }
+                &::before {
+                    -webkit-transition-delay: 0s, 0s, .25s;
+                    -moz-transition-delay: 0s, 0s, .25s;
+                    transition-delay: 0s, 0s, .25s;
+                }
+                &::after {
+                    -webkit-transition-delay: 0s, .25s, 0s;
+                    -moz-transition-delay: 0s, .25s, 0s;
+                    transition-delay: 0s, .25s, 0s;
+                }
+            }
+        }
         .navbar-nav {
             .nav-link {
                 -webkit-transition: -webkit-transform .15s ease-in;
