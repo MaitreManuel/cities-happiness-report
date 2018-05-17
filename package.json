@@ -9,6 +9,7 @@
     "lint:fix": "eslint --fix src/**",
     "test": "npm run lint",
     "install": "npm run build:dev",
+    "assets": "rm -rf web/public/* && cp -R src/public/* web/public/",
     "build:stats": "webpack --profile --json > webpack-stats.json",
     "build:watch": "webpack --watch",
     "build:dev": "webpack",

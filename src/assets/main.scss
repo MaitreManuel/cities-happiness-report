@@ -2,6 +2,7 @@
 @import 'tools/mixins';
 @import 'tools/variables';
 @import 'tools/animation';
+@import 'fonts/fonts';
 // Bootstraps
 // bootstrap requirements
 @import '~bootstrap/scss/mixins';
@@ -15,20 +16,30 @@
 @import '~bootstrap/scss/grid';
 @import '~bootstrap/scss/nav';
 @import '~bootstrap/scss/navbar';
+// custom styles
+@import 'components/container';
+@import 'components/criterias';
+@import 'components/nav';
+@import 'pages/home';
 
 html {
     font-size: 10px;
 }
 body {
     background-color: $white;
-    color: $black;
-    font-family: 'Arial', SansSerif;
+    color: $grey_charcoal;
+    font-family: $din_rnd_lgt;
     font-size: 1.6rem;
+    font-stretch: normal;
+    font-style: normal;
     font-weight: bold;
     height: 100vh;
+    line-height: normal;
+    letter-spacing: normal;
     overflow: hidden;
     width: 100vw;
 }
+// ATOMIC CSS
 .justify-content-center {
     justify-content: center!important;
 }

@@ -8,10 +8,10 @@ class Nav extends Component {
 
   render() {
     return (
-      <header id="Nav" className="my-4">
+      <header id="Nav">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <NavLink to="/" id="home" className="navbar-brand">
-            <span>City Happiness Report</span>
+            <img src="public/logo_data.png" width="206" height="32" className="d-inline-block align-top" alt="Image de marque happy.cities" />
           </NavLink>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -19,10 +19,10 @@ class Nav extends Component {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav ml-auto">
               <NavLink to="/" id="home" className="nav-item nav-link mx-3">
-                <span>Notre concept</span>
+                <img src="public/more.svg" width="31" height="31" />
               </NavLink>
               <NavLink to="/" id="home" className="nav-item nav-link mx-3">
-                <span>Contact</span>
+                <img src="public/about.svg" width="31" height="31" />
               </NavLink>
             </div>
           </div>
