@@ -24,6 +24,5 @@ domready(() => {
     'public/emojis/medium.svg',
     'public/emojis/bad.svg',
     'public/emojis/very_bad.svg',
-
   ]);
 });
