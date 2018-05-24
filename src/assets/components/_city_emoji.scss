@@ -15,9 +15,9 @@
                 img {
                     background: $yellow_emoji;
                     box-shadow: 0 1px 3px 1px rgba(60,64,67,.2), 0 2px 8px 4px rgba(60,64,67,.1);
-                    height: 60px;
+                    height: 58px;
                     margin-bottom: 1rem;
-                    width: 60px;
+                    width: 58px;
                 }
                 span {
                     font-weight: bold;
@@ -28,13 +28,22 @@
                 font-family: $bryant;
                 font-weight: 500;
                 text-align: center;
+                -webkit-transition: font-size .2s ease-out;
+                -moz-transition: font-size .2s ease-out;
                 transition: font-size .2s ease-out;
                 img {
                     border-radius: 100%;
                     height: 50px;
                     margin-bottom: .7rem;
                     width: 50px;
+                    -webkit-transition: height .2s ease-in, width .2s ease-out;
+                    -moz-transition: height .2s ease-in, width .2s ease-out;
                     transition: height .2s ease-in, width .2s ease-out;
+                    &.grow-up {
+                        -webkit-animation: grow-up .3s linear 1 forwards;
+                        -moz-animation: grow-up .3s linear 1 forwards;
+                        animation: grow-up .3s linear 1 forwards;
+                    }
                 }
                 span {
                     display: block;

@@ -19,6 +19,36 @@
     40%  { opacity: .2; }
     100% { opacity: 1; }
 }
+@-webkit-keyframes grow-up {
+    0%   {
+        height: 0;
+        width: 0;
+    }
+    100% {
+        height: 50px;
+        width: 50px;
+    }
+}
+@-moz-keyframes grow-up {
+    0%   {
+        height: 0;
+        width: 0;
+    }
+    100% {
+        height: 50px;
+        width: 50px;
+    }
+}
+@keyframes grow-up {
+    0%   {
+        height: 0;
+        width: 0;
+    }
+    100% {
+        height: 50px;
+        width: 50px;
+    }
+}
 @-webkit-keyframes jump {
     0%   { -webkit-transform: translate3d(0,0,0) scale3d(1,1,1); }
     40%  { -webkit-transform: translate3d(0,30%,0) scale3d(.7,1.5,1); }

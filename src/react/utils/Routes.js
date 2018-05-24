@@ -3,6 +3,8 @@ import { Route, Switch, HashRouter } from 'react-router-dom';
 
 import Home from './../pages/Home';
 
+import DATAS from '../../public/datas';
+
 class Routes extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +36,7 @@ class Routes extends Component {
     return (
       <HashRouter>
         <Switch>
-          <Route exact path={ '/' } component={ Home }></Route>
+          <Route exact path={ '/' } render={ () => <Home datas={ DATAS }/> }></Route>
           {/*<Route component={ NotFound } />*/}
         </Switch>
       </HashRouter>

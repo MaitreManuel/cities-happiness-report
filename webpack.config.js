@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const nodeModules = path.resolve(__dirname, 'node_modules');
 const PurifyCSSPlugin = require('purifycss-webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const AssetsCompressionPlugin = require('brotli-webpack-plugin');
 const ScriptsCompressionPlugin = require('brotli-gzip-webpack-plugin');
 
@@ -147,18 +148,28 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        // eslint-disable-next-line camelcase
-        screw_ie8: true,
-        warnings: false
-      }
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        compress: {
+          warnings: false,
+        },
+        output: {
+          comments: false,
+          beautify: false,
+        },
+        sourceMap: false,
+        ie8: false,
+      },
     }),
-    // new PurifyCSSPlugin({
-    //   minimize: true,
-    //   paths: glob.sync([path.join(__dirname, 'src/.html'), path.join(__dirname, 'src/.js')]),
-    // }),
+    new PurifyCSSPlugin({
+      minimize: true,
+      paths: glob.sync([
+        path.join(__dirname, 'web/index.html'),
+        path.join(__dirname, 'src/assets/**/*.js'),
+        path.join(__dirname, 'src/assets/**/*.scss'),
+        path.join(__dirname, 'src/react/**/*.js'),
+      ]),
+    }),
     new AssetsCompressionPlugin({
       algorithm: 'gzip',
       asset: '[path].gz[query]',
