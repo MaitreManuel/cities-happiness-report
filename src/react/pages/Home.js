@@ -38,9 +38,15 @@ class Home extends Component {
     this.animateEmojis();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
+    const me = this;
+    let prev_city = prevState.current_city,
+      current_city = me.state.current_city;
+
     this.getDatas();
-    this.animateEmojis();
+    if (prev_city === current_city) {
+      this.animateEmojis();
+    }
   }
 
   getDatas() {
