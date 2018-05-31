@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 
+// import * as Utils from '../../assets/tools/utils';
+
 class CityWatching extends Component {
   constructor(props) {
     super(props);
   }
+
+  // componentDidMount() {
+  //   Utils.matterJS(document.querySelector('.wrapper-matter-js'));
+  // }
 
   render() {
     const me = this,
@@ -18,6 +24,7 @@ class CityWatching extends Component {
           <p className="data">{ data }</p>
           <p className="label">{ label }</p>
         </div>
+        <div className="wrapper-matter-js p-absolute"></div>
       </div>
     );
   }

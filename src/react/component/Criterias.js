@@ -1,8 +1,20 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 class Criterias extends Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    const criteria = this.props.criteria,
+      criteria_DOM = document.querySelector('#'+ criteria);
+
+    if (criteria_DOM) {
+      criteria_DOM.checked = true;
+    } else {
+      document.querySelector('#happiness').checked = true;
+    }
   }
 
   render() {
@@ -17,7 +29,7 @@ class Criterias extends Component {
         <ul className="criterias">
           <li>
             <div className="custom-control custom-radio fadein">
-              <input onChange={ switchCriteria } type="radio" name="theme" value="happiness" className="custom-control-input" id="happiness" defaultChecked={ true } />
+              <input onChange={ switchCriteria } type="radio" name="theme" value="happiness" className="custom-control-input" id="happiness" />
               <label className="custom-control-label" htmlFor="happiness">Happiness</label>
             </div>
           </li>
@@ -47,8 +59,8 @@ class Criterias extends Component {
           </li>
           <li>
             <div className="custom-control custom-radio fadein">
-              <input onChange={ switchCriteria } type="radio" name="theme" value="life_cost" className="custom-control-input" id="life-price" />
-              <label className="custom-control-label" htmlFor="life-price">Coût de la vie</label>
+              <input onChange={ switchCriteria } type="radio" name="theme" value="life_cost" className="custom-control-input" id="life_cost" />
+              <label className="custom-control-label" htmlFor="life_cost">Coût de la vie</label>
             </div>
           </li>
           <li>
@@ -71,8 +83,8 @@ class Criterias extends Component {
           </li>
           <li>
             <div className="custom-control custom-radio fadein">
-              <input onChange={ switchCriteria } type="radio" name="theme" value="air_quality" className="custom-control-input" id="quality" />
-              <label className="custom-control-label" htmlFor="quality">Qualité de l{ '\'' }air</label>
+              <input onChange={ switchCriteria } type="radio" name="theme" value="air_quality" className="custom-control-input" id="air_quality" />
+              <label className="custom-control-label" htmlFor="air_quality">Qualité de l{ '\'' }air</label>
             </div>
           </li>
         </ul>
@@ -80,5 +92,11 @@ class Criterias extends Component {
     );
   }
 }
+
+Criterias.propTypes = {
+  classes           : PropTypes.string,
+  criteria          : PropTypes.string,
+  switchCriteria    : PropTypes.func,
+};
 
 export default Criterias;

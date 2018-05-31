@@ -1,4 +1,16 @@
 {
+  "labels": {
+    "happiness": "de global happiness",
+    "meteo": "entre soleil et pluie",
+    "loisirs": "en fonction du nombre d'équipemets culturels et des plus proches stations balnéaires",
+    "population": "d'habitants par km2",
+    "transports": "de transports par habitant par an",
+    "life_cost": "en fonction du prix/m2 des logements",
+    "crime": "en fonction du nombre des forces de l'ordre et des délinquants",
+    "chomage": "taux de chômage",
+    "sante": "en fonction du nombre d'hôpitaux par habitant",
+    "air_quality": "en fonction du dioxyde d'azote présent dans l'air (30 µg/m3 étant la norme)"
+  },
   "bordeaux": {
     "happiness": 17.61,
     "meteo": 21.74,
@@ -7,7 +19,7 @@
     "transports": 4.09,
     "life_cost": 92.89,
     "crime": 94.25,
-    "chomage": 95.96,
+    "chomage": 11.00,
     "sante": 36.36,
     "air_quality": 15
   },
@@ -19,7 +31,7 @@
     "transports": 0.04,
     "life_cost": 95.40,
     "crime": 96.91,
-    "chomage": 97.06,
+    "chomage": 8.00,
     "sante": 19.22,
     "air_quality": 39
   },
@@ -31,7 +43,7 @@
     "transports": 16.91,
     "life_cost": 95.26,
     "crime": 93.69,
-    "chomage": 92.95,
+    "chomage": 19.20,
     "sante": 36.71,
     "air_quality": 23
   },
@@ -43,7 +55,7 @@
     "transports": 2.31,
     "life_cost": 97.82,
     "crime": 98.94,
-    "chomage": 93.17,
+    "chomage": 18.60,
     "sante": 30.84,
     "air_quality": 25
   },
@@ -55,7 +67,7 @@
     "transports": 100,
     "life_cost": 92.42,
     "crime": 89.54,
-    "chomage": 96.04,
+    "chomage": 10.80,
     "sante": 51.01,
     "air_quality": 43
   },
@@ -67,7 +79,7 @@
     "transports": 0.02,
     "life_cost": 94.21,
     "crime": 90.24,
-    "chomage": 93.17,
+    "chomage": 18.60,
     "sante": 4.35,
     "air_quality": 45
   },
@@ -79,7 +91,7 @@
     "transports": 7.25,
     "life_cost": 95.09,
     "crime": 96.67,
-    "chomage": 96.04,
+    "chomage": 21.10,
     "sante": 19.15,
     "air_quality": 37
   },
@@ -91,7 +103,7 @@
     "transports": 9.64,
     "life_cost": 94.79,
     "crime": 95.57,
-    "chomage": 93.91,
+    "chomage": 16.60,
     "sante": 31.42,
     "air_quality": 23
   },
@@ -103,7 +115,7 @@
     "transports": 14.34,
     "life_cost": 83.15,
     "crime": 67.71,
-    "chomage": 95.59,
+    "chomage": 12.00,
     "sante": 2.74,
     "air_quality": 45
   },
@@ -115,7 +127,7 @@
     "transports": 0.03,
     "life_cost": 97.07,
     "crime": 99.93,
-    "chomage": 96.70,
+    "chomage": 9.00,
     "sante": 72.22,
     "air_quality": 25
   },
@@ -127,7 +139,7 @@
     "transports": 0.77,
     "life_cost": 94.11,
     "crime": 98.20,
-    "chomage": 93.98,
+    "chomage": 16.40,
     "sante": 24.73,
     "air_quality": 42
   },

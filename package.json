@@ -1,5 +1,5 @@
 {
-  "name": "julie-portfolio",
+  "name": "cities-happiness-report",
   "author": "Trystan Eveno",
   "licence": "MIT",
   "version": "1.0.0",
@@ -19,6 +19,7 @@
   "dependencies": {
     "bootstrap": "^4.1.0",
     "domready": "^1.0.8",
+    "matter-js": "^0.14.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-router-dom": "^4.2.2"

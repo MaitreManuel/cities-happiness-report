@@ -86,7 +86,7 @@ class Home extends Component {
         } else if (result_criteria <= 10) {
           datas[data]['emoji'] = 'public/emojis/very_bad.svg';
         }
-      } else if (criteria === 'crime' || criteria === 'chomage' || criteria === 'life_cost') {
+      } else if (criteria === 'crime' || criteria === 'life_cost') {
         if (result_criteria <= 100 && result_criteria > 95) {
           datas[data]['emoji'] = 'public/emojis/very_nice.svg';
         } else if (result_criteria <= 95 && result_criteria > 94) {
@@ -98,6 +98,20 @@ class Home extends Component {
         } else if (result_criteria <= 91 && result_criteria > 89) {
           datas[data]['emoji'] = 'public/emojis/bad.svg';
         } else if (result_criteria <= 89) {
+          datas[data]['emoji'] = 'public/emojis/very_bad.svg';
+        }
+      } else if(criteria === 'chomage') {
+        if (result_criteria <= 5) {
+          datas[data]['emoji'] = 'public/emojis/very_nice.svg';
+        } else if (result_criteria >= 5 && result_criteria < 10) {
+          datas[data]['emoji'] = 'public/emojis/nice.svg';
+        } else if (result_criteria >= 10 && result_criteria < 15) {
+          datas[data]['emoji'] = 'public/emojis/good.svg';
+        } else if (result_criteria >= 15 && result_criteria < 20) {
+          datas[data]['emoji'] = 'public/emojis/medium.svg';
+        } else if (result_criteria >= 20 && result_criteria < 25) {
+          datas[data]['emoji'] = 'public/emojis/bad.svg';
+        } else if (result_criteria >= 30) {
           datas[data]['emoji'] = 'public/emojis/very_bad.svg';
         }
       } else if (criteria === 'air_quality') {
@@ -253,7 +267,7 @@ class Home extends Component {
                       </label>
                     </div>
 
-                    <NavLink to={ '/watch/'+ me.state.current_city} className="btn btn-primary fadein">Visualiser</NavLink>
+                    <NavLink to={ '/watch/'+ me.state.current_city +'/'+ me.state.current_criteria} className="btn btn-primary fadein">Visualiser</NavLink>
                   </div>
                 </div>
               </div>

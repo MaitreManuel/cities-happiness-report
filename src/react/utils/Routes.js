@@ -38,7 +38,7 @@ class Routes extends Component {
       <HashRouter>
         <Switch>
           <Route exact path={ '/' } render={ props => <Home datas={ DATAS } { ...props }/> }></Route>
-          <Route exact path={ '/watch/:city' } render={ props => <Watch datas={ DATAS } { ...props }/> }></Route>
+          <Route exact path={ '/watch/:city/:criteria' } render={ props => <Watch datas={ DATAS } { ...props }/> }></Route>
           {/*<Route component={ NotFound } />*/}
         </Switch>
       </HashRouter>
