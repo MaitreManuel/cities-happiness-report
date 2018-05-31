@@ -83,22 +83,29 @@ class Watch extends Component {
       url_city = me.props.match.params.city,
       url_criteria = me.props.match.params.criteria,
       state_city = me.state.city,
-      state_criteria = me.state.criteria;
+      state_criteria = me.state.criteria,
+      panel_criterias = document.querySelector('.special-present');
     let current_data = DATAS_GLOBAL[url_city][url_criteria],
       label_data = DATAS_GLOBAL['labels'][url_criteria],
       unity = url_criteria === 'population' ? '' : url_criteria === 'air_quality' ? 'μg/m3' : '%';
 
     if (url_city !== state_city || url_criteria !== state_criteria) {
+      if (panel_criterias) {
+        sessionStorage.setItem('criterias_panel', panel_criterias.classList.contains('open'));
+      }
+
       return (
         <Redirect to={ '/watch/'+ state_city +'/'+ state_criteria } />
       );
     } else {
+      const isOpen = sessionStorage.getItem('criterias_panel') === 'true' ? ' open' : '';
+
       return (
         <section id="Watch">
           <Container>
             <Nav/>
-            <div className="p-absolute special-present">
-              <Criterias classes={ 'dark watch' } switchCriteria={ me.switchCriteria } criteria={ url_criteria }>
+            <div className={ 'p-absolute special-present'+ isOpen }>
+              <Criterias classes={ 'dark watch' } switchCriteria={ me.switchCriteria } criteria={ url_criteria } >
                 <div className="logo">
                   <svg className="jumping" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35 28.3" style={{ enableBackground: 'new 0 0 35 28.3' }} xmlSpace="preserve">
                     <style type="text/css">
