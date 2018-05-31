@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import Container from '../component/Container';
 import Criterias from '../component/Criterias';
@@ -158,10 +159,9 @@ class Home extends Component {
           <div className="content">
             <div className="row">
               <div className="col-4 col-criterias">
-                <div className="wrapper-list-criterias light">
+                <Criterias classes={ 'light' } switchCriteria={ me.switchCriteria }>
                   <p className="title">Choisis une thématique : <span className="current-data">{ current_data.city +', '+ current_data.criteria +' = '+ current_data.data +' '+ unity }</span></p>
-                  <Criterias switchCriteria={ me.switchCriteria } />
-                </div>
+                </Criterias>
               </div>
               <div className="col-6">
                 <div className="wrapper-french-map">
@@ -253,7 +253,7 @@ class Home extends Component {
                       </label>
                     </div>
 
-                    <a href="javascript:void(0);" className="btn btn-primary fadein">Visualiser</a>
+                    <NavLink to={ '/watch/'+ me.state.current_city} className="btn btn-primary fadein">Visualiser</NavLink>
                   </div>
                 </div>
               </div>

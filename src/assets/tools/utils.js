@@ -31,3 +31,25 @@ exports.preloadImages = (array, waitForOtherResources, timeout) => {
     }, t);
   }
 };
+exports.resizeSVG = (elDimension, containerDimension) => {
+  const elW = elDimension.width;
+  const elH = elDimension.height;
+  const containerW = containerDimension.width;
+  const containerH = containerDimension.height;
+
+  const ratio = elH / elW;
+  let w = containerW;
+  let h = containerW * ratio;
+
+  if (h < containerH) {
+    h = containerH;
+    w = h / ratio;
+  }
+
+  return {
+    width: w,
+    height: h,
+    x: (containerW - w) / 2,
+    y: (containerH - h) / 2
+  };
+};

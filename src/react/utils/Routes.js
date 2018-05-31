@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 
 import Home from './../pages/Home';
+import Watch from './../pages/Watch';
 
 import DATAS from '../../public/datas';
 
@@ -36,7 +37,8 @@ class Routes extends Component {
     return (
       <HashRouter>
         <Switch>
-          <Route exact path={ '/' } render={ () => <Home datas={ DATAS }/> }></Route>
+          <Route exact path={ '/' } render={ props => <Home datas={ DATAS } { ...props }/> }></Route>
+          <Route exact path={ '/watch/:city' } render={ props => <Watch datas={ DATAS } { ...props }/> }></Route>
           {/*<Route component={ NotFound } />*/}
         </Switch>
       </HashRouter>

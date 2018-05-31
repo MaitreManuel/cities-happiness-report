@@ -20,16 +20,18 @@
 @import 'components/button';
 @import 'components/container';
 @import 'components/criterias';
+@import 'components/cities';
 @import 'components/city_emoji';
 @import 'components/nav';
 @import 'pages/home';
 @import 'pages/loading';
+@import 'pages/watch';
 
 html {
     font-size: 10px;
 }
 body {
-    background-color: $white;
+    background-color: $grey_lighter;
     color: $grey_charcoal;
     font-family: $din_rnd_reg;
     font-size: 1.6rem;

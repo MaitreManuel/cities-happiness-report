@@ -1,0 +1,82 @@
+#Cities {
+    background: $white;
+    height: 60px;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100vw;
+    &::-webkit-scrollbar {
+        width: $fat;
+    }
+    &::-webkit-scrollbar-track {
+        border: 0 solid $black;
+        &:horizontal { border-bottom-width: 1px; }
+        &:vertical { border-right-width: 1px; }
+    }
+    &::-webkit-scrollbar-thumb {
+        border: 0 solid $black;
+        &:horizontal {
+            border-bottom-width: $skinny;
+            &:hover { border-bottom-width: $fat; }
+        }
+        &:vertical {
+            border-right-width: $skinny;
+            &:hover { border-right-width: $fat; }
+        }
+    }
+    .wrapper-cities {
+        color: $grey_charcoal;
+        font-family: $din_rnd_lgt;
+        height: 100%;
+        line-height: 45px;
+        text-transform: uppercase;
+        .wrapper-city {
+            display: inline-block;
+            height: 100%;
+            text-align: center;
+            width: 150px;
+            label {
+                margin: 0;
+            }
+            label, .custom-control {
+                height: 45px;
+            }
+            .custom-control {
+                display: inline-block;
+                &.custom-radio {
+                    position: relative;
+                    &:after, &:hover {
+                        color: $yellow;
+                    }
+                    * {
+                        &:after, &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    input[type="radio"] {
+                        opacity: 0;
+                        position: absolute;
+                    }
+                    input[type="radio"]:checked ~ .custom-control-label {
+                        color: $yellow;
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                    .custom-control-label {
+                        &::after {
+                            background: $yellow;
+                            display: block;
+                            content:'';
+                            height: 2px;
+                            margin-top: -2px;
+                            width: 0;
+                            -webkit-transition: width .2s ease-in;
+                            -moz-transition: width .2s ease-in;
+                            transition: width .2s ease-in;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

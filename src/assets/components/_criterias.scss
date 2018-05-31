@@ -1,10 +1,83 @@
+.special-present {
+    left: -326px;
+    top: 0;
+    z-index: 999999;
+    -webkit-transition: left .3s linear;
+    -moz-transition: left .3s linear;
+    transition: left .3s linear;
+    &.open {
+        left: -50px;
+        .toggle-criterias {
+            -webkit-transform: rotate(135deg);
+            -moz-transform: rotate(135deg);
+            transform: rotate(135deg);
+            .close {
+                opacity: 1;
+            }
+            .open {
+                opacity: 0;
+            }
+        }
+    }
+    .toggle-criterias {
+        background: $grey_charcoal;
+        border-radius: 100%;
+        cursor: pointer;
+        font-size: 40px;
+        font-family: 'Times New Roman';
+        height: 50px;
+        position: absolute;
+        right: -25px;
+        top: calc(50% - 25px);
+        width: 50px;
+        z-index: 2;
+        -webkit-transition: .3s;
+        -moz-transition: .3s;
+        transition: .3s;
+        span {
+            height: 100%;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            -webkit-transition: .3s;
+            -moz-transition: .3s;
+            transition: .3s;
+        }
+        .close {
+            opacity: 0;
+            -webkit-transform: rotate(-135deg);
+            -moz-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+        }
+        .open {
+            font-size: 30px;
+            left: 6px;
+            top: 7px;
+        }
+    }
+    .wrapper-list-criterias {
+        height: 100vh;
+        padding-left: 50px;
+        width: 283px;
+        .criterias {
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+    }
+}
 .wrapper-list-criterias {
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    transform: translateY(-50%);
+    &:not(.watch) {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
     &.dark {
+        background: $grey_charcoal;
         color: $white;
     }
     &.light {

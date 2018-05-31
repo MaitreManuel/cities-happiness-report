@@ -1,0 +1,15 @@
+#Watch {
+    .content {
+        height: calc(100vh - 136px);
+        .bg-city {
+            height: 100%;
+            left: 0;
+            overflow: hidden;
+            top: 0;
+            width: 100%;
+            img {
+                position: relative;
+            }
+        }
+    }
+}
