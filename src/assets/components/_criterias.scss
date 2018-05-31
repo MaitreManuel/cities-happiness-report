@@ -19,6 +19,16 @@
             }
         }
     }
+    .criterias {
+        margin-top: -2rem;
+    }
+    .logo {
+        padding-left: 1rem;
+        padding-top: 2rem;
+        svg {
+            height: 32px;
+        }
+    }
     .toggle-criterias {
         background: $grey_charcoal;
         border-radius: 100%;

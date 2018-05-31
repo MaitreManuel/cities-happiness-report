@@ -1,0 +1,35 @@
+.CityWatching {
+    height: 100%;
+    .city {
+        color: $grey_light;
+        font-size: 17rem;
+        left: 50%;
+        position: absolute;
+        top: calc(25% + 55px);
+        text-transform: uppercase;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    .data, .label {
+        color: $grey_charcoal;
+        font-family: $din_rnd_lgt;
+    }
+    .data {
+        font-size: 6.4rem;
+    }
+    .label {
+        font-size: 1.8rem;
+    }
+    .the-data {
+        left: 50%;
+        position: absolute;
+        top: calc(50% - 85px);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
