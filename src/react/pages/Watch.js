@@ -137,7 +137,7 @@ class Watch extends Component {
               </div>
               <div className="row">
                 <div className="col-12">
-                  <CityWatching city={ url_city } data={ current_data +' '+ unity } label={ label_data } />
+                  <CityWatching city={ url_city } data={ current_data +' '+ unity } label={ label_data } criteria={ { label: url_criteria, data: current_data } } />
                 </div>
               </div>
             </div>
