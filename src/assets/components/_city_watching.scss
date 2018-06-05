@@ -1,5 +1,10 @@
 .CityWatching {
     height: 100%;
+    .btn {
+        position: relative;
+        top: calc(50% + 60px);
+        z-index: 3;
+    }
     .city {
         color: $grey_light;
         font-size: 17rem;
@@ -36,5 +41,20 @@
         height: 100%;
         width: 100%;
         z-index: 2;
+    }
+}
+.CityWatching.compared {
+    .city {
+        font-size: 9rem;
+        top: calc(25% + 116px);
+    }
+    .data {
+        font-size: 3.8rem;
+    }
+    .label {
+        font-size: 1.4rem;
+    }
+    .the-data {
+        top: calc(50% - 58px);
     }
 }

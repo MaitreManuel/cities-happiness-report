@@ -137,7 +137,9 @@ class Watch extends Component {
               </div>
               <div className="row">
                 <div className="col-12">
-                  <CityWatching city={ url_city } data={ current_data +' '+ unity } label={ label_data } criteria={ { label: url_criteria, data: current_data } } />
+                  <CityWatching classes={ '' } city={ url_city } data={ current_data +' '+ unity } label={ label_data } criteria={ { label: url_criteria, data: current_data } }>
+                    <a href="javascript:void(0);" className="btn btn-primary fadein">Comparer la ville</a>
+                  </CityWatching>
                 </div>
               </div>
             </div>

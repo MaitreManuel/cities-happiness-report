@@ -24,15 +24,17 @@ class CityWatching extends Component {
     const me = this,
       city = me.props.city,
       data = me.props.data,
-      label = me.props.label;
+      label = me.props.label,
+      template = me.props.children;
 
     return (
-      <div className="CityWatching text-center">
+      <div className={ 'CityWatching text-center '+ me.props.classes }>
         <p className="city">{ city }</p>
         <div className="the-data">
           <p className="data">{ data }</p>
           <p className="label">{ label }</p>
         </div>
+        { template }
         <div id={ 'matter-js-'+ me.state.id } className="wrapper-matter-js p-absolute"></div>
       </div>
     );

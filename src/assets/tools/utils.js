@@ -135,9 +135,6 @@ exports.testMatter = (elem_wrapper, lvl) => {
 exports.getLvlData = (result_criteria, criteria) => {
   let lvl = 1;
 
-  console.log(result_criteria);
-  console.log(criteria);
-
   if (criteria === 'happiness' || criteria === 'meteo' || criteria === 'loisirs' || criteria === 'sante' || criteria === 'transports') {
     if (result_criteria <= 100 && result_criteria > 50) {
       lvl = 6;
