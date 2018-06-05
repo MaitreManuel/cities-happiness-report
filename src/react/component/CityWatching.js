@@ -9,6 +9,9 @@ class CityWatching extends Component {
 
   componentDidMount() {
     Utils.testMatter(document.querySelector('.wrapper-matter-js'));
+    window.addEventListener('resize', () => {
+      Utils.testMatter(document.querySelector('.wrapper-matter-js'));
+    });
   }
 
   render() {

@@ -3,6 +3,8 @@ import Matter from 'matter-js';
 exports.testMatter = elem_wrapper => {
   let Engine = Matter.Engine,
     Render = Matter.Render,
+    Composites = Matter.Composites,
+    Common = Matter.Common,
     MouseConstraint = Matter.MouseConstraint,
     Mouse = Matter.Mouse,
     World = Matter.World,
@@ -40,11 +42,74 @@ exports.testMatter = elem_wrapper => {
     Bodies.rectangle(-offset, h / 2, 50.5, h + 0.5 + 2 * offset, options)
   ]);
 
+  let stack = Composites.stack(20, 20, Math.floor(w / 72), 3, 0, 0, (x, y) => {
+    let random = Common.random();
 
-  let boxA = Bodies.rectangle(400, 200, 80, 80);
-  let boxB = Bodies.rectangle(450, 50, 80, 80);
+    console.log('random');
+    if (random > 0.8) {
+      return Bodies.circle(x, y, 36, {
+        density: 0.0005,
+        frictionAir: 0.06,
+        restitution: 0.3,
+        friction: 0.01,
+        render: {
+          sprite: {
+            texture: 'public/emojis/male_3.png'
+          }
+        }
+      });
+    } else if (random > 0.6 && random <= 0.8) {
+      return Bodies.circle(x, y, 36, {
+        density: 0.0005,
+        frictionAir: 0.06,
+        restitution: 0.3,
+        friction: 0.01,
+        render: {
+          sprite: {
+            texture: 'public/emojis/male_2.png'
+          }
+        }
+      });
+    } else if (random > 0.4 && random <= 0.6) {
+      return Bodies.circle(x, y, 36, {
+        density: 0.0005,
+        frictionAir: 0.06,
+        restitution: 0.3,
+        friction: 0.01,
+        render: {
+          sprite: {
+            texture: 'public/emojis/female_2.png'
+          }
+        }
+      });
+    } else if (random > 0.2 && random <= 0.4) {
+      return Bodies.circle(x, y, 36, {
+        density: 0.0005,
+        frictionAir: 0.06,
+        restitution: 0.3,
+        friction: 0.01,
+        render: {
+          sprite: {
+            texture: 'public/emojis/male_1.png'
+          }
+        }
+      });
+    } else {
+      return Bodies.circle(x, y, 36, {
+        density: 0.0005,
+        frictionAir: 0.06,
+        restitution: 0.3,
+        friction: 0.01,
+        render: {
+          sprite: {
+            texture: 'public/emojis/female_1.png'
+          }
+        }
+      });
+    }
+  });
 
-  World.add(world, [boxA, boxB]);
+  World.add(world, stack);
 
   let mouse = Mouse.create(render.canvas),
     mouseConstraint = MouseConstraint.create(engine, {
@@ -58,141 +123,15 @@ exports.testMatter = elem_wrapper => {
     });
 
   World.add(world, mouseConstraint);
+
   render.mouse = mouse;
 
-  Engine.run(engine);
-
-  Render.run(render);
-};
-exports.matterJS = elem_wrapper => {
-  let Example = Example || {};
-
-  Example.sprites = function() {
-    let Engine = Matter.Engine,
-      Render = Matter.Render,
-      Runner = Matter.Runner,
-      Composites = Matter.Composites,
-      Common = Matter.Common,
-      MouseConstraint = Matter.MouseConstraint,
-      Mouse = Matter.Mouse,
-      World = Matter.World,
-      Bodies = Matter.Bodies;
-
-    // create engine
-    let engine = Engine.create(),
-      world = engine.world;
-
-    // create renderer
-    let render = Render.create({
-      element: elem_wrapper,
-      engine: engine,
-      options: {
-        width: 800,
-        height: 600,
-        background: '#0f0f13',
-        showAngleIndicator: false,
-        wireframes: false
-      }
-    });
-
-    Render.run(render);
-
-    // create runner
-    let runner = Runner.create();
-    Runner.run(runner, engine);
-
-    // add bodies
-    let offset = 10,
-      options = {
-        isStatic: true,
-        render: {
-          fillStyle: 'transparent'
-        }
-      };
-
-    world.bodies = [];
-
-    // these static walls will not be rendered in this sprites example, see options
-    World.add(world, [
-      Bodies.rectangle(400, -offset, 800.5 + 2 * offset, 50.5, options),
-      Bodies.rectangle(400, 600 + offset, 800.5 + 2 * offset, 50.5, options),
-      Bodies.rectangle(800 + offset, 300, 50.5, 600.5 + 2 * offset, options),
-      Bodies.rectangle(-offset, 300, 50.5, 600.5 + 2 * offset, options)
-    ]);
-
-    let stack = Composites.stack(20, 20, 10, 4, 0, 0, function(x, y) {
-      if (Common.random() > 0.35) {
-        return Bodies.rectangle(x, y, 64, 64, {
-          render: {
-            strokeStyle: '#ffffff',
-            sprite: {
-              texture: '//cdn.rawgit.com/liabru/matter-js/2560a681/demo/img/box.png'
-            }
-          }
-        });
-      } else {
-        return Bodies.circle(x, y, 46, {
-          density: 0.0005,
-          frictionAir: 0.06,
-          restitution: 0.3,
-          friction: 0.01,
-          render: {
-            sprite: {
-              texture: '//cdn.rawgit.com/liabru/matter-js/2560a681/demo/img/ball.png'
-            }
-          }
-        });
-      }
-    });
-
-    World.add(world, stack);
-
-    // add mouse control
-    let mouse = Mouse.create(render.canvas),
-      mouseConstraint = MouseConstraint.create(engine, {
-        mouse: mouse,
-        constraint: {
-          stiffness: 0.2,
-          render: {
-            visible: false
-          }
-        }
-      });
-
-    World.add(world, mouseConstraint);
-
-    // keep the mouse in sync with rendering
-    render.mouse = mouse;
-
-    // fit the render viewport to the scene
-    Render.lookAt(render, {
-      min: { x: 0, y: 0 },
-      max: { x: 800, y: 600 }
-    });
-
-    // context for MatterTools.Demo
-    return {
-      engine: engine,
-      runner: runner,
-      render: render,
-      canvas: render.canvas,
-      stop: function() {
-        Matter.Render.stop(render);
-        Matter.Runner.stop(runner);
-      }
-    };
-  };
-
-  MatterTools.Demo.create({
-    toolbar: {},
-    preventZoom: true,
-    resetOnOrientation: true,
-    examples: [
-      {
-        init: Example.sprites
-      }
-    ]
+  Render.lookAt(render, {
+    min: { x: 0, y: 0 },
+    max: { x: w, y: h }
   });
+  Engine.run(engine);
+  Render.run(render);
 };
 exports.preloadImages = (array, waitForOtherResources, timeout) => {
   let loaded = false, list = [], imgs = array.slice(0), t = timeout || 15*1000, timer;
