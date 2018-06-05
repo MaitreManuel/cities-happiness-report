@@ -60,6 +60,9 @@
                         color: $yellow;
                         &::after {
                             width: 100%;
+                            -webkit-animation: force-underline-city .2s linear;
+                            -moz-animation: force-underline-city .2s linear;
+                            animation: force-underline-city .2s linear;
                         }
                     }
                     .custom-control-label {

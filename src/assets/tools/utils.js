@@ -1,5 +1,69 @@
 import Matter from 'matter-js';
 
+exports.testMatter = elem_wrapper => {
+  let Engine = Matter.Engine,
+    Render = Matter.Render,
+    MouseConstraint = Matter.MouseConstraint,
+    Mouse = Matter.Mouse,
+    World = Matter.World,
+    Bodies = Matter.Bodies;
+
+  let h = elem_wrapper.getBoundingClientRect().height,
+    w = elem_wrapper.getBoundingClientRect().width;
+
+  let engine = Engine.create(),
+    world = engine.world;
+
+  let render = Render.create({
+    element: elem_wrapper,
+    engine: engine,
+    options: {
+      height: h,
+      width: w,
+      wireframes: false,
+      background: 'tranparent'
+    }
+  });
+
+  let offset = 10,
+    options = {
+      isStatic: true,
+      render: {
+        fillStyle: 'transparent'
+      }
+    };
+
+  World.add(world, [
+    Bodies.rectangle(w / 2, -offset, w + 0.5 + 2 * offset, 50.5, options),
+    Bodies.rectangle(w / 2, h + offset, w + 0.5 + 2 * offset, 50.5, options),
+    Bodies.rectangle(w + offset, h / 2, 50.5, h + 0.5 + 2 * offset, options),
+    Bodies.rectangle(-offset, h / 2, 50.5, h + 0.5 + 2 * offset, options)
+  ]);
+
+
+  let boxA = Bodies.rectangle(400, 200, 80, 80);
+  let boxB = Bodies.rectangle(450, 50, 80, 80);
+
+  World.add(world, [boxA, boxB]);
+
+  let mouse = Mouse.create(render.canvas),
+    mouseConstraint = MouseConstraint.create(engine, {
+      mouse: mouse,
+      constraint: {
+        stiffness: 0.2,
+        render: {
+          visible: false
+        }
+      }
+    });
+
+  World.add(world, mouseConstraint);
+  render.mouse = mouse;
+
+  Engine.run(engine);
+
+  Render.run(render);
+};
 exports.matterJS = elem_wrapper => {
   let Example = Example || {};
 

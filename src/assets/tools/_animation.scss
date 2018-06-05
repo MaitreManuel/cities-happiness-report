@@ -19,6 +19,30 @@
     40%  { opacity: .2; }
     100% { opacity: 1; }
 }
+@-webkit-keyframes force-underline-city {
+    from   { width: 0; }
+    to     { width: 100%; }
+}
+@-moz-keyframes force-underline-city {
+    from   { width: 0; }
+    to     { width: 100%; }
+}
+@keyframes force-underline-city {
+    from   { width: 0; }
+    to     { width: 100%; }
+}
+@-webkit-keyframes force-underline-criteria {
+    from   { width: 0; }
+    to     { width: calc(100% + 65px); }
+}
+@-moz-keyframes force-underline-criteria {
+    from   { width: 0; }
+    to     { width: calc(100% + 65px); }
+}
+@keyframes force-underline-criteria {
+    from   { width: 0; }
+    to     { width: calc(100% + 65px); }
+}
 @-webkit-keyframes grow-up {
     0%   {
         height: 0;

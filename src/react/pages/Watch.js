@@ -105,7 +105,7 @@ class Watch extends Component {
           <Container>
             <Nav/>
             <div className={ 'p-absolute special-present'+ isOpen }>
-              <Criterias classes={ 'dark watch' } switchCriteria={ me.switchCriteria } criteria={ url_criteria } >
+              <Criterias classes={ 'dark watch add-anim' } switchCriteria={ me.switchCriteria } criteria={ url_criteria } >
                 <div className="logo">
                   <svg className="jumping" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35 28.3" style={{ enableBackground: 'new 0 0 35 28.3' }} xmlSpace="preserve">
                     <style type="text/css">

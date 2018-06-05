@@ -174,7 +174,7 @@ class Home extends Component {
             <div className="row">
               <div className="col-4 col-criterias">
                 <Criterias classes={ 'light' } switchCriteria={ me.switchCriteria }>
-                  <p className="title">Choisis une thématique : <span className="current-data">{ current_data.city +', '+ current_data.criteria +' = '+ current_data.data +' '+ unity }</span></p>
+                  <p className="title">Choisis une thématique :</p>
                 </Criterias>
               </div>
               <div className="col-6">
