@@ -1,44 +1,41 @@
-.swal2-container {
-    animation: backdropAnimation linear 250ms forwards;
-}
 .swal2-modal {
     padding: 1.875rem !important;
-}
-.swal2-contentwrapper,
-.swal2-container button,
-.swal2-container input,
-.swal2-container textarea {
-    font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
-}
-.swal2-container textarea {
-    height: unset !important;
-    padding: 0.75rem !important;
-    resize: none;
-}
-.swal2-container button,
-.swal2-container .label {
-    font-weight: 800 !important;
+    width: 55rem !important;
 }
 .swal2-title {
+    font-size: 3.5rem !important;
     margin-bottom: 1.875rem !important;
-}
-.swal2-container button {
-    border-radius: 1.875rem !important;
 }
 .swal2-confirm {
     background: linear-gradient(to left, $yellow, $yellow_emoji) !important;
 }
-.swal2-container.no-background .swal2-modal {
-    background-color: transparent !important;
-}
-.swal2-container.no-background .swal2-title,
-.swal2-container.no-background .swal2-content {
-    color: white;
-}
-.swal2-container.no-background .swal2-content {
-    line-height: 1.75;
-}
-.swal2-container.no-background button {
-    border: white solid 2px !important;
-    background: transparent !important;
+.swal2-container {
+    -webkit-animation: backdropAnimation linear 250ms forwards;
+    -moz-animation: backdropAnimation linear 250ms forwards;
+    animation: backdropAnimation linear 250ms forwards;
+    * {
+        font-family: $roboto;
+    }
+    a {
+        color: $yellow;
+        &:hover {
+            color: $yellow_emoji;
+        }
+    }
+    button {
+        border-radius: 1.875rem !important;
+        font-size: 1.5rem !important;
+        font-weight: 800 !important;
+    }
+    h4 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    p {
+        font-size: 1.6rem;
+    }
+    .swal2-content {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
 }
