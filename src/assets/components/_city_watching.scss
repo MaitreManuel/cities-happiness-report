@@ -2,6 +2,7 @@
     height: 100%;
     .btn {
         position: relative;
+        text-transform: uppercase;
         top: calc(50% + 60px);
         z-index: 3;
     }

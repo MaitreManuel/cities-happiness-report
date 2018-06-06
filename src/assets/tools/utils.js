@@ -345,4 +345,12 @@ exports.resizeSVG = (elDimension, containerDimension) => {
     y: (containerH - h) / 2
   };
 };
+exports.transition = callback => {
+  const main = document.querySelector('main');
 
+  main.classList.add('transition');
+  setTimeout(() => {
+    callback();
+    main.classList.remove('transition');
+  }, 750);
+};

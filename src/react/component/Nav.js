@@ -15,10 +15,10 @@ class Nav extends Component {
       html:
         '<h4>Ils l\'ont créé !</h4>' +
         '<div class="text-content">' +
-          '<p><a class="fadein" href="https://www.linkedin.com/in/jcitoleux/" target="_blank">Jean</a> - Web Design</p>' +
-          '<p><a class="fadein" href="https://www.linkedin.com/in/marion-bonvoust/" target="_blank">Marion</a> - Web Design</p>' +
-          '<p><a class="fadein" href="https://www.linkedin.com/in/sebastien-alexandre/" target="_blank">Sébastien</a> - Web UX</p>' +
-          '<p><a class="fadein" href="https://www.linkedin.com/in/trystan-eveno/" target="_blank">Trystan</a> - Web Dévéloppement</p>' +
+          '<p><a class="fadein" href="https://www.linkedin.com/in/jcitoleux/" target="_blank">Jean</a> - Design</p>' +
+          '<p><a class="fadein" href="https://www.linkedin.com/in/marion-bonvoust/" target="_blank">Marion</a> - Design</p>' +
+          '<p><a class="fadein" href="https://www.linkedin.com/in/sebastien-alexandre/" target="_blank">Sébastien</a> - UX</p>' +
+          '<p><a class="fadein" href="https://www.linkedin.com/in/trystan-eveno/" target="_blank">Trystan</a> - Dévéloppement</p>' +
         '</div>',
       confirmButtonText: '✔ Super !',
     });

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 
 import Cities from '../component/Cities';
 import CityWatching from '../component/CityWatching';
@@ -67,7 +67,22 @@ class Watch extends Component {
       });
       document.querySelector('.toggle-criterias').addEventListener('click', () => {
         document.querySelector('.special-present').classList.toggle('open');
+        sessionStorage.setItem('criterias_panel', document.querySelector('.special-present').classList.contains('open'));
       });
+    }
+  }
+
+  handleClick(e, id) {
+    let real_target = document.querySelector(id);
+
+    if (!real_target.getAttribute('data-redirect')) {
+      e.preventDefault();
+      real_target.setAttribute('data-redirect', 'true');
+      Utils.transition(() => {
+        real_target.click();
+      });
+    } else {
+      real_target.removeAttribute('data-redirect');
     }
   }
 
@@ -84,17 +99,12 @@ class Watch extends Component {
       url_city = me.props.match.params.city,
       url_criteria = me.props.match.params.criteria,
       state_city = me.state.city,
-      state_criteria = me.state.criteria,
-      panel_criterias = document.querySelector('.special-present');
+      state_criteria = me.state.criteria;
     let current_data = DATAS_GLOBAL[url_city][url_criteria],
       label_data = DATAS_GLOBAL['labels'][url_criteria],
       unity = url_criteria === 'population' ? '' : url_criteria === 'air_quality' ? 'μg/m3' : '%';
 
     if (url_city !== state_city || url_criteria !== state_criteria) {
-      if (panel_criterias) {
-        sessionStorage.setItem('criterias_panel', panel_criterias.classList.contains('open'));
-      }
-
       return (
         <Redirect to={ '/watch/'+ state_city +'/'+ state_criteria } />
       );
@@ -105,6 +115,11 @@ class Watch extends Component {
         <section id="Watch">
           <Container>
             <Nav/>
+            <NavLink to="/" id="return-home" className="btn btn-primary fadein p-absolute return"
+              onClick={ (event) => {
+                me.handleClick(event, '#return-home');
+              } }
+            >&larr; Retour</NavLink>
             <div className={ 'p-absolute special-present'+ isOpen }>
               <Criterias classes={ 'dark watch add-anim' } switchCriteria={ me.switchCriteria } criteria={ url_criteria } >
                 <div className="logo">

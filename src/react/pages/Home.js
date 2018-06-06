@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import * as Utils from '../../assets/tools/utils';
+
 import Container from '../component/Container';
 import Criterias from '../component/Criterias';
 import Nav from '../component/Nav';
@@ -62,6 +64,20 @@ class Home extends Component {
       criteria: criteria,
       data: datas[city][criteria],
     };
+  }
+
+  handleClick(e, id) {
+    let real_target = document.querySelector(id);
+
+    if (!real_target.getAttribute('data-redirect')) {
+      e.preventDefault();
+      real_target.setAttribute('data-redirect', 'true');
+      Utils.transition(() => {
+        real_target.click();
+      });
+    } else {
+      real_target.removeAttribute('data-redirect');
+    }
   }
 
   setEmoji() {
@@ -265,7 +281,11 @@ class Home extends Component {
                       </label>
                     </div>
 
-                    <NavLink to={ '/watch/'+ me.state.current_city +'/'+ me.state.current_criteria} className="btn btn-primary fadein">Visualiser</NavLink>
+                    <NavLink to={ '/watch/'+ me.state.current_city +'/'+ me.state.current_criteria} id="watch" className="btn btn-primary fadein"
+                      onClick={ (event) => {
+                        me.handleClick(event, '#watch');
+                      } }
+                    >Visualiser</NavLink>
                   </div>
                 </div>
               </div>
