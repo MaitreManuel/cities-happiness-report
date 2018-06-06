@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
@@ -150,5 +151,11 @@ class Watch extends Component {
     }
   }
 }
+
+Watch.propTypes = {
+  datas    : PropTypes.object,
+  match    : PropTypes.object,
+  params   : PropTypes.object,
+};
 
 export default Watch;

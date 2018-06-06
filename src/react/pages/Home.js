@@ -162,9 +162,7 @@ class Home extends Component {
 
   render() {
     const me = this;
-    let current_data = me.getDatas(),
-      datas = me.setEmoji(),
-      unity = current_data.criteria === 'population' ? 'hab/km2' : current_data.criteria === 'air_quality' ? 'μg/m3' : '%';
+    let datas = me.setEmoji();
 
     return (
       <section id="Home">

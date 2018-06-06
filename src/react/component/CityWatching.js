@@ -14,9 +14,9 @@ class CityWatching extends Component {
   componentDidMount() {
     const me = this;
 
-    Utils.testMatter(document.querySelector('#matter-js-'+ me.state.id), Utils.getLvlData(me.props.criteria.data, me.props.criteria.label));
+    Utils.testMatter(document.querySelector('#matter-js-'+ me.state.id), Utils.getLvlData(me.props.criteria.data, me.props.criteria.label), me.props.criteria.label);
     window.addEventListener('resize', () => {
-      Utils.testMatter(document.querySelector('#matter-js-'+ me.state.id), Utils.getLvlData(me.props.criteria.data, me.props.criteria.label));
+      Utils.testMatter(document.querySelector('#matter-js-'+ me.state.id), Utils.getLvlData(me.props.criteria.data, me.props.criteria.label), me.props.criteria.label);
     });
   }
 

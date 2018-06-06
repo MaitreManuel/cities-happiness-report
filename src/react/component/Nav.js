@@ -1,12 +1,26 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import swal from 'sweetalert2';
 
 class Nav extends Component {
   constructor(props) {
     super(props);
+
+    this.openMore = this.openMore.bind(this);
+  }
+
+  openMore() {
+    swal({
+      title: 'À propos de ce site',
+      html:
+        '<p>cc</p>',
+      confirmButtonText: '✔ Super',
+    });
   }
 
   render() {
+    const me = this;
+
     return (
       <header id="Nav">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -18,12 +32,12 @@ class Nav extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav ml-auto">
-              <NavLink to="/" id="home" className="nav-item nav-link mx-3">
+              <a href="javascript:void(0);" id="more" className="nav-item nav-link mx-3">
                 <img src="public/more.svg" width="31" height="31" />
-              </NavLink>
-              <NavLink to="/" id="home" className="nav-item nav-link mx-3">
+              </a>
+              <a onClick={ me.openMore } href="javascript:void(0);" id="about" className="nav-item nav-link mx-3">
                 <img src="public/about.svg" width="31" height="31" />
-              </NavLink>
+              </a>
             </div>
           </div>
         </nav>

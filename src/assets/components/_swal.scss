@@ -1,0 +1,44 @@
+.swal2-container {
+    animation: backdropAnimation linear 250ms forwards;
+}
+.swal2-modal {
+    padding: 1.875rem !important;
+}
+.swal2-contentwrapper,
+.swal2-container button,
+.swal2-container input,
+.swal2-container textarea {
+    font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
+}
+.swal2-container textarea {
+    height: unset !important;
+    padding: 0.75rem !important;
+    resize: none;
+}
+.swal2-container button,
+.swal2-container .label {
+    font-weight: 800 !important;
+}
+.swal2-title {
+    margin-bottom: 1.875rem !important;
+}
+.swal2-container button {
+    border-radius: 1.875rem !important;
+}
+.swal2-confirm {
+    background: linear-gradient(to left, $yellow, $yellow_emoji) !important;
+}
+.swal2-container.no-background .swal2-modal {
+    background-color: transparent !important;
+}
+.swal2-container.no-background .swal2-title,
+.swal2-container.no-background .swal2-content {
+    color: white;
+}
+.swal2-container.no-background .swal2-content {
+    line-height: 1.75;
+}
+.swal2-container.no-background button {
+    border: white solid 2px !important;
+    background: transparent !important;
+}
