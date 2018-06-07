@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { NavLink, Redirect } from 'react-router-dom';
+import swal from 'sweetalert2';
 
 import Cities from '../component/Cities';
 import CityWatching from '../component/CityWatching';
@@ -18,12 +19,106 @@ class Watch extends Component {
 
     DATAS_GLOBAL = props.datas;
     this.state = {
-      city      : props.match.params.city,
-      criteria  : props.match.params.criteria,
+      city          : props.match.params.city,
+      criteria      : props.match.params.criteria,
+      compare_city  : '',
     };
 
+    this.compareCity = this.compareCity.bind(this);
     this.switchCity = this.switchCity.bind(this);
     this.switchCriteria = this.switchCriteria.bind(this);
+  }
+
+  compareCity() {
+    swal({
+      title: 'Comparer la ville',
+      html:
+      '<h4>Choisissez une seconde ville</h4>' +
+      '<div class="choose-second-city">' +
+        '<div class="wrapper-city">' +
+          '<div class="custom-control custom-radio fadein">' +
+            '<input type="radio" name="city-swal" value="bordeaux" class="custom-control-input" id="bordeaux-swal" checked />' +
+            '<label class="custom-control-label" for="bordeaux-swal">Bordeaux</label>' +
+          '</div>' +
+        '</div>' +
+        '<div class="wrapper-city">' +
+          '<div class="custom-control custom-radio fadein">' +
+            '<input type="radio" name="city-swal" value="grenoble" class="custom-control-input" id="grenoble-swal" />' +
+            '<label class="custom-control-label" for="grenoble-swal">Grenoble</label>' +
+          '</div>' +
+        '</div>' +
+        '<div class="wrapper-city">' +
+          '<div class="custom-control custom-radio fadein">' +
+            '<input type="radio" name="city-swal" value="lille" class="custom-control-input" id="lille-swal" />' +
+            '<label class="custom-control-label" for="lille-swal">Lille</label>' +
+          '</div>' +
+        '</div>' +
+        '<div class="wrapper-city">' +
+          '<div class="custom-control custom-radio fadein">' +
+            '<input type="radio" name="city-swal" value="limoges" class="custom-control-input" id="limoges-swal" />' +
+            '<label class="custom-control-label" for="limoges-swal">Limoges</label>' +
+          '</div>' +
+        '</div>' +
+        '<div class="wrapper-city">' +
+          '<div class="custom-control custom-radio fadein">' +
+            '<input type="radio" name="city-swal" value="lyon" class="custom-control-input" id="lyon-swal" />' +
+            '<label class="custom-control-label" for="lyon-swal">Lyon</label>' +
+          '</div>' +
+        '</div>' +
+        '<div class="wrapper-city">' +
+          '<div class="custom-control custom-radio fadein">' +
+            '<input type="radio" name="city-swal" value="marseille" class="custom-control-input" id="marseille-swal" />' +
+            '<label class="custom-control-label" for="marseille-swal">Marseille</label>' +
+          '</div>' +
+        '</div>' +
+        '<div class="wrapper-city">' +
+          '<div class="custom-control custom-radio fadein">' +
+            '<input type="radio" name="city-swal" value="montpellier" class="custom-control-input" id="montpellier-swal" />' +
+            '<label class="custom-control-label" for="montpellier-swal">Montpellier</label>' +
+          '</div>' +
+        '</div>' +
+        '<div class="wrapper-city">' +
+          '<div class="custom-control custom-radio fadein">' +
+            '<input type="radio" name="city-swal" value="nantes" class="custom-control-input" id="nantes-swal" />' +
+            '<label class="custom-control-label" for="nantes-swal">Nantes</label>' +
+          '</div>' +
+        '</div>' +
+        '<div class="wrapper-city">' +
+          '<div class="custom-control custom-radio fadein">' +
+            '<input type="radio" name="city-swal" value="paris" class="custom-control-input" id="paris-swal" />' +
+            '<label class="custom-control-label" for="paris-swal">Paris</label>' +
+          '</div>' +
+        '</div>' +
+        '<div class="wrapper-city">' +
+          '<div class="custom-control custom-radio fadein">' +
+            '<input type="radio" name="city-swal" value="rennes" class="custom-control-input" id="rennes-swal" />' +
+            '<label class="custom-control-label" for="rennes-swal">Rennes</label>' +
+          '</div>' +
+        '</div>' +
+        '<div class="wrapper-city">' +
+          '<div class="custom-control custom-radio fadein">' +
+            '<input type="radio" name="city-swal" value="quimper" class="custom-control-input" id="quimper-swal" />' +
+            '<label class="custom-control-label" for="quimper-swal">Quimper</label>' +
+          '</div>' +
+        '</div>' +
+        '<div class="wrapper-city">' +
+          '<div class="custom-control custom-radio fadein">' +
+            '<input type="radio" name="city-swal" value="strasbourg" class="custom-control-input" id="strasbourg-swal" />' +
+            '<label class="custom-control-label" for="strasbourg-swal">Strasbourg</label>' +
+          '</div>' +
+        '</div>' +
+      '</div>',
+      showCancelButton: true,
+      cancelButtonText: 'Annuler',
+      confirmButtonText: '✔ Ok',
+    })
+      .then(result => {
+        const city_2 = document.querySelector('input[name="city-swal"]:checked');
+
+        if (result.value) {
+          this.setState({ compare_city: city_2.value });
+        }
+      });
   }
 
   componentDidMount() {
@@ -99,12 +194,19 @@ class Watch extends Component {
       url_city = me.props.match.params.city,
       url_criteria = me.props.match.params.criteria,
       state_city = me.state.city,
-      state_criteria = me.state.criteria;
+      state_criteria = me.state.criteria,
+      compare_city = me.state.compare_city;
     let current_data = DATAS_GLOBAL[url_city][url_criteria],
       label_data = DATAS_GLOBAL['labels'][url_criteria],
       unity = url_criteria === 'population' ? '' : url_criteria === 'air_quality' ? 'μg/m3' : '%';
 
-    if (url_city !== state_city || url_criteria !== state_criteria) {
+    if (compare_city) {
+      Utils.transition(() => {
+        return (
+          <Redirect to={ '/compare/'+ state_city +'/'+ compare_city +'/'+ state_criteria } />
+        );
+      });
+    } else if (url_city !== state_city || url_criteria !== state_criteria) {
       return (
         <Redirect to={ '/watch/'+ state_city +'/'+ state_criteria } />
       );
@@ -154,7 +256,7 @@ class Watch extends Component {
               <div className="row">
                 <div className="col-12">
                   <CityWatching classes={ '' } city={ url_city } data={ current_data +' '+ unity } label={ label_data } criteria={ { label: url_criteria, data: current_data } }>
-                    <a href="javascript:void(0);" className="btn btn-primary fadein">Comparer la ville</a>
+                    <a href="javascript:void(0);" onClick={ me.compareCity } className="btn btn-primary fadein">Comparer la ville</a>
                   </CityWatching>
                 </div>
               </div>

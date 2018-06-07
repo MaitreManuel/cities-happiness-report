@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 
+import Compare from '../pages/Compare';
 import Home from './../pages/Home';
 import Watch from './../pages/Watch';
 
@@ -39,6 +40,7 @@ class Routes extends Component {
         <Switch>
           <Route exact path={ '/' } render={ props => <Home datas={ DATAS } { ...props }/> }></Route>
           <Route exact path={ '/watch/:city/:criteria' } render={ props => <Watch datas={ DATAS } { ...props }/> }></Route>
+          <Route exact path={ '/compare/:city_1/:city_2/:criteria' } render={ props => <Compare datas={ DATAS } { ...props }/> }></Route>
           {/*<Route component={ NotFound } />*/}
         </Switch>
       </HashRouter>
