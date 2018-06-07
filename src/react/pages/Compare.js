@@ -147,11 +147,11 @@ class Compare extends Component {
               </div>
               <div className="row">
                 <div className="col-6 border-right">
-                  <CityWatching classes={ 'compared' } city={ url_city_1 } data={ current_data_1 +' '+ unity } label={ label_data } criteria={ { label: url_criteria, data: current_data_1 } }>
+                  <CityWatching classes={ 'compared' } city={ url_city_1 } data={ current_data_1 +' '+ unity } id_matter={ '' } label={ label_data } criteria={ { label: url_criteria, data: current_data_1 } }>
                   </CityWatching>
                 </div>
                 <div className="col-6 border-left">
-                  <CityWatching classes={ 'compared' } city={ url_city_2 } data={ current_data_2 +' '+ unity } label={ label_data } criteria={ { label: url_criteria, data: current_data_2 } }>
+                  <CityWatching classes={ 'compared' } city={ url_city_2 } data={ current_data_2 +' '+ unity } id_matter={ '_2' } label={ label_data } criteria={ { label: url_criteria, data: current_data_2 } }>
                   </CityWatching>
                 </div>
               </div>

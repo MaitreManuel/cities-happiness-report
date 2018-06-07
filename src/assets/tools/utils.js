@@ -244,17 +244,17 @@ exports.getLvlData = (result_criteria, criteria) => {
     }
   } else if(criteria === 'chomage') {
     if (result_criteria <= 5) {
-      lvl = 6;
-    } else if (result_criteria >= 5 && result_criteria < 10) {
-      lvl = 5;
-    } else if (result_criteria >= 10 && result_criteria < 15) {
-      lvl = 4;
-    } else if (result_criteria >= 15 && result_criteria < 20) {
-      lvl = 3;
-    } else if (result_criteria >= 20 && result_criteria < 25) {
-      lvl = 2;
-    } else if (result_criteria >= 30) {
       lvl = 1;
+    } else if (result_criteria >= 5 && result_criteria < 10) {
+      lvl = 2;
+    } else if (result_criteria >= 10 && result_criteria < 15) {
+      lvl = 3;
+    } else if (result_criteria >= 15 && result_criteria < 20) {
+      lvl = 4;
+    } else if (result_criteria >= 20 && result_criteria < 25) {
+      lvl = 5;
+    } else if (result_criteria >= 30) {
+      lvl = 6;
     }
   } else if (criteria === 'air_quality') {
     if (result_criteria <= 16) {

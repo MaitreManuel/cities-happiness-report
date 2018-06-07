@@ -7,7 +7,7 @@ class CityWatching extends Component {
     super(props);
 
     this.state = {
-      id: new Date().getTime()
+      id: new Date().getTime() + props.id_matter
     };
   }
 
