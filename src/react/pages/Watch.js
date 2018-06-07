@@ -201,11 +201,9 @@ class Watch extends Component {
       unity = url_criteria === 'population' ? '' : url_criteria === 'air_quality' ? 'μg/m3' : '%';
 
     if (compare_city) {
-      Utils.transition(() => {
-        return (
-          <Redirect to={ '/compare/'+ state_city +'/'+ compare_city +'/'+ state_criteria } />
-        );
-      });
+      return (
+        <Redirect to={ '/compare/'+ state_city +'/'+ compare_city +'/'+ state_criteria } />
+      );
     } else if (url_city !== state_city || url_criteria !== state_criteria) {
       return (
         <Redirect to={ '/watch/'+ state_city +'/'+ state_criteria } />
